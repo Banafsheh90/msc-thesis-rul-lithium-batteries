@@ -12,11 +12,12 @@ The project combines real battery-cycle measurements with synthetic data generat
 * `processed_synthetic_battery_data.csv`
   Processed synthetic battery-cycle dataset produced after generation, filtering, sorting, and consistency checks.
 
-  ## Dataset Source
+## Dataset Source
 
-The real battery-cycle dataset is based on the public Kaggle dataset **Battery Remaining Useful Life (RUL)**. The dataset contains lithium-ion battery cycle measurements and RUL labels used for battery remaining-life prediction.
+The real battery-cycle dataset is based on the public Kaggle dataset [Battery Remaining Useful Life (RUL)](https://www.kaggle.com/datasets/ignaciovinuales/battery-remaining-useful-life-rul).
 
-The source should be cited when reusing or extending this project.
+The dataset contains lithium-ion battery cycle measurements and RUL labels used for battery remaining-life prediction. The source should be cited when reusing or extending this project.
+
 
 ## Real Battery Data
 
