@@ -180,10 +180,8 @@ Potential directions for future research include:
 
 ## Thesis Context
 
-This repository represents the complete implementation
-and documentation of my Master’s thesis in Computer Science.
-The full thesis document and defense presentation
-provide additional academic context and formal evaluation.
+This repository represents the implementation and supporting documentation for my Master's thesis in Computer Science.
 
-- thesis/thesis.pdf
-- thesis/defense_slides.pdf
+The full thesis document provides the formal academic context, literature review, methodology, assumptions, results, and limitations.
+
+* `docs/thesis.pdf`
