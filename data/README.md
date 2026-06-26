@@ -29,4 +29,8 @@ After generation, post-processing is applied to enforce domain consistency, incl
 
 ## Availability
 
-The full dataset is not included directly in this repository by default. This folder documents the data strategy and may include small sample files for demonstration or reproducibility purposes.
+This folder includes the real battery-cycle dataset used in the project:
+
+- `real_battery_cycle_data.csv`
+
+The dataset is used as the basis for preprocessing, synthetic data generation, and validation of the generated synthetic data. A processed synthetic dataset may also be added separately after filtering and consistency checks.
