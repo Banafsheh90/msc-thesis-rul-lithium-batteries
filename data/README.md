@@ -1,36 +1,47 @@
 # Data
 
-This project uses lithium-ion battery cycle data for Remaining Useful Life (RUL) prediction.
+This folder contains the datasets used in the lithium-ion battery Remaining Useful Life (RUL) prediction workflow.
 
-The workflow combines real battery measurements with synthetic data generated using the SDV Gaussian Copula Synthesizer. The synthetic data is used to expand the experimental dataset while preserving key statistical relationships from the original data.
+The project combines real battery-cycle measurements with synthetic data generated using SDV's Gaussian Copula Synthesizer. The synthetic data is not used as a raw replacement for the real dataset; it is filtered and checked to preserve realistic battery degradation behavior before being used in the modeling workflow.
 
-## Dataset Notes
+## Files
 
-The original dataset includes cycle-level battery features such as:
+* `real_battery_cycle_data.csv`
+  Real battery-cycle dataset used as the basis for preprocessing, synthetic data generation, and validation.
 
-- `Cycle_Index`
-- `Discharge Time (s)`
-- `Total time (s)`
-- voltage-related discharge features
-- `Remaining Useful Life (RUL)`
+* `processed_synthetic_battery_data.csv`
+  Processed synthetic battery-cycle dataset produced after generation, filtering, sorting, and consistency checks.
 
-A `DeviceID` column is assigned during preprocessing to separate battery/device sequences when RUL resets.
+## Real Battery Data
+
+The real dataset contains cycle-level lithium-ion battery measurements, including features such as:
+
+* `Cycle_Index`
+* `Discharge Time (s)`
+* `Decrement 3.6-3.4V (s)`
+* voltage-related discharge and charge features
+* `Total time (s)`
+* `Remaining Useful Life (RUL)`
+
+During preprocessing, a `DeviceID` column is assigned to separate battery/device sequences when RUL resets.
 
 ## Synthetic Data
 
-Synthetic data is generated using a Gaussian Copula approach. Specific numerical distributions are assigned to selected features, including beta and uniform distributions for discharge-related timing features.
+Synthetic data is generated using a Gaussian Copula approach through the SDV library. Specific numerical distributions are assigned to selected features, including beta and uniform distributions for discharge-related timing features.
 
-After generation, post-processing is applied to enforce domain consistency, including:
+The notebook generates a large initial synthetic dataset and then applies post-processing steps to keep the data realistic and usable for RUL modeling.
 
-- filtering physically invalid rows
-- sorting by `DeviceID`, `Cycle_Index`, and `RUL`
-- selecting one row per device-cycle combination
-- enforcing decreasing RUL behavior over battery cycles
+Post-processing includes:
 
-## Availability
+* filtering physically invalid rows
+* sorting by `DeviceID`, `Cycle_Index`, and `RUL`
+* selecting one row per device-cycle combination
+* enforcing decreasing RUL behavior over battery cycles
 
-This folder includes the real battery-cycle dataset used in the project:
+## Validation
 
-- `real_battery_cycle_data.csv`
+The synthetic data is compared with the real dataset using correlation analysis and Frobenius norm comparison. The goal is to check whether the synthetic data preserves the main statistical relationships found in the original battery-cycle data, especially relationships involving cycle count, discharge behavior, and RUL.
 
-The dataset is used as the basis for preprocessing, synthetic data generation, and validation of the generated synthetic data. A processed synthetic dataset may also be added separately after filtering and consistency checks.
+## Note
+
+The processed synthetic dataset in this folder is the cleaned output used for demonstration and reproducibility. The initial synthetic generation step is documented in the main notebook.
