@@ -101,19 +101,22 @@ from raw data to final results.
 
 ## How to Run
 
-1. Clone the repository  
-2. Install dependencies:  
-   pip install -r requirements.txt  
-3. Run the notebooks in order to reproduce the results
+1. Clone the repository
+2. Install dependencies:
 
+       pip install -r requirements.txt
+
+3. Open and run the notebook:
+
+       notebooks/RUL_Estimation_and_data_generation.ipynb
 
 ---
 
 ## Academic Documentation
 
-This repository represents my complete Master’s thesis work.
+This repository includes the implementation and documentation for my Master's thesis.
 
-For detailed academic discussion, methodology, assumptions, and limitations, see:
+For the full academic discussion, methodology, assumptions, and limitations, see:
+
 - `README_thesis.md`
-- `thesis/thesis.pdf`
-- `thesis/defense_slides.pdf`
+- `docs/thesis.pdf`
