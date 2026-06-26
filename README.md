@@ -73,7 +73,7 @@ The main notebook follows this workflow:
 
 ## Data Strategy
 
-The project uses a real lithium-ion battery-cycle dataset as the basis for preprocessing, synthetic data generation, and validation.
+The project uses a public lithium-ion battery-cycle dataset from Kaggle as the basis for preprocessing, synthetic data generation, and validation.
 
 Synthetic data is generated to expand the experimental dataset, but it is not used blindly. After generation, the data is filtered, sorted, and checked against battery-domain constraints, including decreasing RUL behavior over cycle progression.
 
